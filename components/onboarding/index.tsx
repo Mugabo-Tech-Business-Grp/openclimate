@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import React, { useRef, useState } from "react";
 import { View, FlatList, Animated, StyleSheet } from "react-native";
 
@@ -23,7 +24,7 @@ const Onboarding = () => {
     if (slidesRef.current && currentIndex < slides.length - 1) {
       slidesRef.current.scrollToIndex({ index: currentIndex + 1 });
     } else {
-      console.log("last item");
+      router.push("/weather");
     }
   };
 
