@@ -1,32 +1,72 @@
-import React from "react";
 import { WeatherItem } from "@/constants/types";
-import { ImageSourcePropType } from "react-native";
-import { View, Text, StyleSheet, Image } from "react-native";
+import React, { Fragment, useState } from "react";
+import {
+  View,
+  Text,
+  Image,
+  Modal,
+  StyleSheet,
+  TouchableOpacity,
+  ImageSourcePropType,
+  TouchableWithoutFeedback,
+} from "react-native";
+
+// Components
+import TemperatureModal from "../modals/temperature";
 
 const Temperature = ({ data }: { data: WeatherItem }) => {
+  const [modalVisibe, setModalVisible] = useState(false);
+
   return (
-    <View style={styles.container}>
-      <View style={styles.content}>
-        <View style={styles.temperature}>
-          <Text style={{ fontSize: 12 }}>{data?.title}</Text>
-          {/* @ts-ignore */}
-          <Text style={{ fontSize: 30 }}>{data?.value?.temperature}°C</Text>
+    <Fragment>
+      <Modal
+        transparent={true}
+        collapsable={true}
+        animationType="slide"
+        visible={modalVisibe}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
+          <View
+            style={{
+              flex: 1,
+              top: 0,
+              left: 0,
+              zIndex: -1,
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+            }}
+          />
+        </TouchableWithoutFeedback>
+        <TemperatureModal />
+      </Modal>
+      <TouchableOpacity
+        style={styles.container}
+        onPress={() => setModalVisible(true)}
+      >
+        <View style={styles.content}>
+          <View style={styles.temperature}>
+            <Text style={{ fontSize: 12 }}>{data?.title}</Text>
+            {/* @ts-ignore */}
+            <Text style={{ fontSize: 30 }}>{data?.value?.temperature}°C</Text>
+          </View>
+          <View style={styles.stats}>
+            {/* @ts-ignore */}
+            <Text style={{ fontSize: 12 }}>L: {data?.value?.low}</Text>
+            {/* @ts-ignore */}
+            <Text style={{ fontSize: 12 }}>H: {data?.value?.high}</Text>
+            <Text style={{ fontSize: 12, color: "#949494" }}>
+              Upt: {data?.lastUpdated}
+            </Text>
+          </View>
+          <Image
+            resizeMode="contain"
+            source={data.image as ImageSourcePropType}
+          />
         </View>
-        <View style={styles.stats}>
-          {/* @ts-ignore */}
-          <Text style={{ fontSize: 12 }}>L: {data?.value?.low}</Text>
-          {/* @ts-ignore */}
-          <Text style={{ fontSize: 12 }}>H: {data?.value?.high}</Text>
-          <Text style={{ fontSize: 12, color: "#949494" }}>
-            Upt: {data?.lastUpdated}
-          </Text>
-        </View>
-        <Image
-          resizeMode="contain"
-          source={data.image as ImageSourcePropType}
-        />
-      </View>
-    </View>
+      </TouchableOpacity>
+    </Fragment>
   );
 };
 

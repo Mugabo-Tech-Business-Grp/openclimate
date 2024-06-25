@@ -54,9 +54,11 @@ const Onboarding = () => {
           pagingEnabled={true}
           scrollEventThrottle={32}
           viewabilityConfig={viewConfig}
+          // @ts-ignore
           keyExtractor={(item) => item?.id}
           showsHorizontalScrollIndicator={false}
           onViewableItemsChanged={viewableItemsChanged}
+          // @ts-ignore
           renderItem={({ item }) => <OnboardingItem item={item} />}
         />
       </View>

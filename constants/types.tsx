@@ -25,3 +25,12 @@ export type WeatherItem = {
     | { wind: string; dusts: string }
     | { low: string; high: string; temperature: string };
 };
+
+export type TemperatureItem = {
+  id: string;
+  image: any;
+  low: string;
+  high: string;
+  value: string;
+  title: string;
+};

@@ -61,3 +61,30 @@ export default [
     image: require("../images/wind.png"),
   },
 ];
+
+export const temperatures = [
+  {
+    id: "1",
+    low: "18",
+    high: "24",
+    value: "28",
+    title: "Partly Cloudy",
+    image: require("../images/cloud.png"),
+  },
+  {
+    id: "2",
+    low: "18",
+    high: "24",
+    value: "32",
+    title: "Partly Cloudy",
+    image: require("../images/cloud.png"),
+  },
+  {
+    id: "3",
+    low: "18",
+    high: "24",
+    value: "20",
+    title: "Partly Cloudy",
+    image: require("../images/cloud.png"),
+  },
+];
