@@ -9,10 +9,13 @@ const Temperature = ({ data }: { data: WeatherItem }) => {
       <View style={styles.content}>
         <View style={styles.temperature}>
           <Text style={{ fontSize: 12 }}>{data?.title}</Text>
+          {/* @ts-ignore */}
           <Text style={{ fontSize: 30 }}>{data?.value?.temperature}°C</Text>
         </View>
         <View style={styles.stats}>
+          {/* @ts-ignore */}
           <Text style={{ fontSize: 12 }}>L: {data?.value?.low}</Text>
+          {/* @ts-ignore */}
           <Text style={{ fontSize: 12 }}>H: {data?.value?.high}</Text>
           <Text style={{ fontSize: 12, color: "#949494" }}>
             Upt: {data?.lastUpdated}

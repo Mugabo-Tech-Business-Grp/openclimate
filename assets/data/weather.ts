@@ -58,5 +58,6 @@ export default [
     title: "Wind",
     icon: "weather-windy",
     lastUpdated: "9:00 AM",
+    image: require("../images/wind.png"),
   },
 ];
