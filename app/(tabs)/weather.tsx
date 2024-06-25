@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigation } from "expo-router";
 import Icon from "react-native-vector-icons/Ionicons";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text, StyleSheet, FlatList, View } from "react-native";
+import {
+  Text,
+  View,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 
 // Data
 import weather from "@/assets/data/weather";
@@ -13,6 +20,8 @@ import Smalls from "@/components/weather/smalls";
 import Temperature from "@/components/weather/temperature";
 
 const Weather = () => {
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
@@ -43,12 +52,16 @@ const Weather = () => {
                 <Text style={{ fontSize: 12 }}>Mukamira</Text>
               </View>
             </View>
-            <View style={styles.notification}>
+            <TouchableOpacity
+              style={styles.notification}
+              // @ts-ignore
+              onPress={() => navigation.navigate("disasters")}
+            >
               <Icon name="notifications-outline" size={20} color={"#000000"} />
               <View style={styles.number}>
                 <Text style={{ color: "white", fontSize: 12 }}>2</Text>
               </View>
-            </View>
+            </TouchableOpacity>
           </View>
         }
       />

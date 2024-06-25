@@ -42,3 +42,10 @@ export type SmallItem = {
   title: string;
   lastUpdated: string;
 };
+
+export type Disaster = {
+  time: string;
+  title: string;
+  content: string;
+  status: "warning" | "danger";
+};

@@ -39,11 +39,17 @@ const TabsLayout = () => {
         <Tabs.Screen
           name="settings"
           options={{
-            title: "Create",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <Icon name="account-settings-outline" size={26} color={color} />
             ),
+          }}
+        />
+        <Tabs.Screen
+          name="disasters"
+          options={{
+            headerShown: false,
+            tabBarButton: () => null,
           }}
         />
       </Tabs>
