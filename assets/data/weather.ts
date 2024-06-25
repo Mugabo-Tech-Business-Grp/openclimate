@@ -88,3 +88,58 @@ export const temperatures = [
     image: require("../images/cloud.png"),
   },
 ];
+
+export const humidities = [
+  {
+    id: "1",
+    value: "46%",
+    type: "humidity",
+    title: "Humidity",
+    icon: "water-outline",
+    lastUpdated: "9:00 AM",
+  },
+  {
+    id: "2",
+    value: "10%",
+    type: "precipitation",
+    title: "Precipitation",
+    icon: "water-outline",
+    lastUpdated: "9:00 AM",
+  },
+  {
+    id: "3",
+    value: "24%",
+    type: "air",
+    icon: "air-purifier",
+    background: "#40C240",
+    lastUpdated: "9:00 AM",
+    title: "Air Quality Index",
+  },
+];
+
+export const winds = [
+  {
+    id: "1",
+    wind: "11",
+    dusts: "24",
+    title: "Wind",
+    icon: "weather-windy",
+    lastUpdated: "9:00 AM",
+  },
+  {
+    id: "2",
+    wind: "11",
+    dusts: "24",
+    title: "Wind",
+    icon: "weather-windy",
+    lastUpdated: "9:00 AM",
+  },
+  {
+    id: "3",
+    wind: "11",
+    dusts: "24",
+    title: "Wind",
+    icon: "weather-windy",
+    lastUpdated: "9:00 AM",
+  },
+];

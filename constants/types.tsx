@@ -34,3 +34,11 @@ export type TemperatureItem = {
   value: string;
   title: string;
 };
+
+export type SmallItem = {
+  id: string;
+  icon: string;
+  value: string;
+  title: string;
+  lastUpdated: string;
+};
